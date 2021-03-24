@@ -27,6 +27,7 @@ namespace _7
 
             foreach (var Car in OurCars)
             {
+                Parking.Add(Car);
             }
 
 
