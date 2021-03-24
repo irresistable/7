@@ -33,7 +33,7 @@ namespace _7
             amount = OurParking.FreeSpace();
             Console.WriteLine($"We have now only {amount} parking lots\n");
 
-            OurParking.AddMoreCars();
+            OurParking.AddMoreCars(); //тут внезапно в гараже работяги сами сварили желтую тачку
 
             amount = OurParking.FreeSpace();
             Console.WriteLine($"We have now only {amount} parking lots\n");
