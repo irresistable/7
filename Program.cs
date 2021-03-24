@@ -15,7 +15,7 @@ namespace _7
                 new Car() { Color = "blue", Plate = "333" },
                 new Car() { Color = "red", Plate = "555" },
             };
-            Console.WriteLine("We have this cars:\n");
+            Console.WriteLine("We have this cars:");
             foreach (var Car in OurCars)
             {
                 Console.WriteLine($"{Car.Color} {Car.Plate}");
@@ -23,7 +23,7 @@ namespace _7
 
             int amount = OurParking.FreeSpace();
             Console.WriteLine($"We have {amount} parking lots\n");
-            Console.WriteLine("Lets park some cars\n");
+            Console.WriteLine("Lets park some cars");
 
             foreach (var Car in OurCars)
             {
@@ -36,9 +36,10 @@ namespace _7
             Console.WriteLine("We have this cars in the parking now:\n");
             foreach (var Car in OurParking)
             {
-                Console.WriteLine($"{Car.Color} {Car.Plate}");
+                Console.WriteLine(Car.);
             }
 
+            
 
 
 
