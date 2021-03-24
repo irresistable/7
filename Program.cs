@@ -30,9 +30,17 @@ namespace _7
                 OurParking.Add(Car);
             }
 
+            int amount2 = OurParking.FreeSpace();
+            Console.WriteLine($"We have now only {amount2} parking lots\n");
+
+            Console.WriteLine("We have this cars in the parking now:\n");
+            foreach (var Car in OurParking)
+            {
+                Console.WriteLine($"{Car.Color} {Car.Plate}");
+            }
 
 
-        
+
 
         }
     }
