@@ -72,7 +72,11 @@ namespace _7
 
         public IEnumerator GetEnumerator()
         {
-            return _cars.GetEnumerator();
+            foreach (var Cars in _cars)
+            {
+                yield return Cars.Color;
+            }
+            //return _cars.GetEnumerator();
 
         }
     }
