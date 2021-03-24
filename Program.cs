@@ -32,7 +32,7 @@ namespace _7
 
             int amount2 = OurParking.FreeSpace();
             
-            //New part1
+            //New part1 solution
             Car car2 = new Car();
             
             Console.WriteLine($"We have now only {amount2} parking lots\n");
