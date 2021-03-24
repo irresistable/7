@@ -27,7 +27,7 @@ namespace _7
 
             foreach (var Car in OurCars)
             {
-                Parking.Add(Car);
+                OurParking.Add(Car);
             }
 
 
@@ -41,9 +41,9 @@ namespace _7
         private List<Car> _cars = new List<Car>();
         private int _freeSpace = 10;
 
-        public void Add(Car Car)
+        public void Add(Car car)
         {
-            _cars.Add(Car);
+           _cars.Add(car);
             _freeSpace = _freeSpace - 1;
         }
 
