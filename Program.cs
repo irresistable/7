@@ -30,19 +30,19 @@ namespace _7
                 OurParking.Add(Car);
             }
 
-            int amount2 = OurParking.FreeSpace();
-            Console.WriteLine($"We have now only {amount2} parking lots\n");
+            amount = OurParking.FreeSpace();
+            Console.WriteLine($"We have now only {amount} parking lots\n");
+
+            OurParking.AddMoreCars();
+
+            amount = OurParking.FreeSpace();
+            Console.WriteLine($"We have now only {amount} parking lots\n");
 
             Console.WriteLine("We have this cars in the parking now:\n");
-            foreach (var Car in OurParking)
+            foreach (var OutCar in OurParking) // foreach должен итерировать по парковке, патамушта она наследует ienumerable
             {
-                Console.WriteLine(Car.);
+                Console.WriteLine(OutCar);//?????
             }
-
-            
-
-
-
         }
     }
     public class Parking : IEnumerable
@@ -63,10 +63,16 @@ namespace _7
 
         public IEnumerator GetEnumerator()
         {
-            foreach (var car in _cars)
+            foreach (var OutCar in _cars)
             {
-                yield return car; //по очереди возвращаем машины с парковки
+                yield return OutCar; //по очереди возвращаем машины с парковки
             }
+        }
+
+        public void AddMoreCars()
+        {
+            _cars.Add(new Car() { Color = "yellow", Plate = "SHIT" });
+            _freeSpace = _freeSpace - 1;
         }
 
     }
