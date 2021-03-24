@@ -74,7 +74,7 @@ namespace _7
         {
             foreach (var Cars in _cars)
             {
-                yield return Cars.Color;
+                yield return Cars.Color+" "+Cars.Plate;
             }
             //return _cars.GetEnumerator();
 
