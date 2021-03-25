@@ -42,46 +42,60 @@ namespace _7
             Console.WriteLine("We have this cars in the parking now:\n");
             foreach (var Car in OurParking) // foreach должен итерировать по парковке, патамушта она наследует ienumerable
             {
-                Console.WriteLine(Car);//????? 
+                Console.WriteLine(Car);//дергаем GetEnumerator()?, где мы его под себя поправили
             }
+
+            Console.WriteLine("2 cars drove out");
+            OurParking.CarDriveOut();
+            OurParking.CarDriveOut();
+            amount = OurParking.FreeSpace();
+            Console.WriteLine($"We have now only {amount} parking lots\n");
+
+            Console.WriteLine("We have this cars in the parking now:\n");
+            foreach (var Car in OurParking) 
+            {
+                Console.WriteLine(Car);//дергаем GetEnumerator()?, где мы его под себя поправили
+            } //интересная последовательность машин осталась в гараже
+
         }
     }
     public class Parking : IEnumerable
     {
         private List<Car> _cars = new List<Car>();
         private int _freeSpace = 10;
+        private int _lot;
 
         public void Add(Car car)
         {
            _cars.Add(car);
             _freeSpace = _freeSpace - 1;
         }
-
         public int FreeSpace()
         {
             return _freeSpace;
         }
-
-
-
         public void AddMoreCars()
         {
             _cars.Add(new Car() { Color = "yellow", Plate = "SHIT" });
-            _freeSpace = _freeSpace - 1;
+            _freeSpace --;
+        }
+        public int CarDriveOut()
+        {
+            _cars.RemoveAt(1);
+            return _freeSpace++;
         }
 
         public IEnumerator GetEnumerator()
         {
-            foreach (var Cars in _cars)
+            foreach (Car Cars in _cars)
             {
-                yield return Cars.Color+" "+Cars.Plate;
+                yield return Cars.Color + " " + Cars.Plate;
             }
             //return _cars.GetEnumerator();
 
         }
     }
 
-    
     public class Car // тут класс машин с Цветом и ГРЗ
     { 
     public string Color { get; set; }
