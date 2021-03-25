@@ -81,7 +81,7 @@ namespace _7
         }
         public int CarDriveOut()
         {
-            _cars.RemoveAt(1);
+            _cars.RemoveAt(0);
             return _freeSpace++;
         }
 
